@@ -25,16 +25,16 @@ nextApp.prepare()
       console.log('[AutoLogin] Starting login process...');
 
 //Raspberry Pi version
-//    const browser = await puppeteer.launch({
-//    executablePath: '/usr/bin/chromium-browser',
-//      headless: true,
-//    }); 
+    const browser = await puppeteer.launch({
+    executablePath: '/usr/bin/chromium-browser',
+      headless: true,
+    }); 
 
 //Windows / standard version
-  const browser = await puppeteer.launch({
-    headless: true, // set to false for debugging
-    args: ['--no-sandbox', '--disable-setuid-sandbox']
-    });
+//  const browser = await puppeteer.launch({
+//    headless: true, // set to false for debugging
+//    args: ['--no-sandbox', '--disable-setuid-sandbox']
+//  });
     
       const page = await browser.newPage();
       await page.goto('http://192.168.1.180/', { waitUntil: 'networkidle2' });
