@@ -28,7 +28,7 @@ export default function FeederDashboard() {
 
   return (
     <div className="flex items-center gap-5 w-full items-center text-center justify-center mb-4">
-        <h1 className="text-white text-2xl font-bold">Connection status: </h1>
+        <h1 className="text-white text-2xl font-bold sl:m-0 ">Connection status: </h1>
       <div
         style={{
           width: 16,
@@ -38,7 +38,7 @@ export default function FeederDashboard() {
         }}
       />
 
-      <div className="text-white font-bold text-2xl">{connected ? "Connected" : "Offline"}</div>
+      <div className="text-white font-bold text-2xl sl:text-xl">{connected ? "Connected" : "Offline"}</div>
     </div>
   );
 }

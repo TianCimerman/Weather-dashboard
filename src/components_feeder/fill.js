@@ -90,7 +90,7 @@ export default function FeederDashboard() {
       </div>
 
       <div className="flex flex-row items-start justify-center gap-4 flex-1 ">
-        <div className="text-white text-xl font-bold hss:pt-10 sl:pt-6 pt-12 sl:pl-20">
+        <div className="text-white text-xl font-bold hss:pt-10 sl:pt-6 pt-12 sl:pl-[3rem]">
         <p className="text-white text-left text-lg font-semibold">
           Fill: {distancePercent != null ? `${distancePercent}%` : loading ? "Loading..." : "--"}
         </p>
@@ -98,7 +98,7 @@ export default function FeederDashboard() {
           Distance: {distanceCm != null ? `${distanceCm} cm` : "--"}
         </p>
         </div>
-        <img src="/images/vecteezy_cute-dog-head-color-design_50090814-removebg-preview.png" alt="Fill legend" className="hss:w-32 w-40 opacity-80 hss:ml-0 ml-10 justify-center sl:ml-0  sl:w-[8rem] sl:pt-0" />
+        <img src="/images/vecteezy_cute-dog-head-color-design_50090814-removebg-preview.png" alt="Fill legend" className="hss:w-32 w-40 opacity-80 hss:ml-0 ml-10 justify-center sl:ml-[-1.5rem] sl:w-[8rem] sl:pt-0" />
       </div>
 
 

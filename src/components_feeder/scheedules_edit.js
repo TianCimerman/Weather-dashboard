@@ -243,6 +243,7 @@ export default function SchedulesEdit() {
         border-gray-300
         rounded-[32px]
         p-10
+        sl:p-8
         hss:p-7
         hss:w-[425px]
          ">

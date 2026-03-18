@@ -52,7 +52,7 @@ export default function FeederLogs() {
         gap-6 
         hss:w-[320px]
         hss:h-[550px]
-        sl:w-[370px]
+        sl:w-[340px]
       "
     >
         <h1 className="text-white text-3xl font-bold">Feeder Logs</h1>

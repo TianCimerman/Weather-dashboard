@@ -299,6 +299,7 @@ export default function FeederDashboard() {
         items-center
         justify-center
         gap-6
+        sl:p-8
       "
     >
 
@@ -347,8 +348,8 @@ export default function FeederDashboard() {
         {loading ? "Feeding..." : "Feed now"}
       </button>
       <div className="flex items-center justify-between w-full px-4">
-        <div className="flex items-center gap-3">
-          <span className="font-semibold flex items-center gap-2">
+        <div className="flex items-center gap-3 sl:gap-5">
+          <span className="font-semibold flex items-center gap-2 sl:mr-1">
             <span className={`text-xl font-bold transition-colors hss:text-lg ${
               feedingEnabled ? "text-orange-500" : "text-gray-600"}`}>✓ 
             Feeding {feedingEnabled ? "Enabled" : "Disabled"}</span>

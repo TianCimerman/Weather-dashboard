@@ -9,7 +9,7 @@ console.log('📁 Next dir:', path.join(__dirname, '..'));
 const nextApp = next({ dev, dir: path.join(__dirname, '..') });
 const handle = nextApp.getRequestHandler();
 
-const PORT = 3000;
+const PORT = 4000;
 
 console.log('⏳ Preparing Next.js...');
 
