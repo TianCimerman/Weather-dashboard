@@ -23,7 +23,7 @@ function getMonitorConfig() {
     thresholdPercent: Number(process.env.FEEDER_FILL_ALERT_THRESHOLD ?? 10),
     checkHour: Number(process.env.FEEDER_FILL_ALERT_HOUR ?? 17),
     checkMinute: Number(process.env.FEEDER_FILL_ALERT_MINUTE ?? 0),
-    maxDistanceCm: Number(process.env.FEEDER_FILL_MAX_CM ?? FEEDER_FILL_MAX_CM),
+    maxDistanceCm: Number(process.env.FEEDER_FILL_MAX_CM ?? 32),
   };
 }
 
@@ -122,11 +122,6 @@ export async function checkFeederFillAndAlert() {
     const data = await res.json();
     const payload = data?.result ?? data?.data ?? data ?? null;
     const metrics = getFillMetrics(payload, config.maxDistanceCm);
-
-    console.log(
-      `[feeder-alert] metrics distanceCm=${metrics.distanceCm ?? "null"} percent=${metrics.percent ?? "null"} measuredAt=${metrics.measuredAt ?? "null"}`
-    );
-
     store.lastCheckedAt = new Date().toISOString();
     store.lastPercent = metrics.percent;
 

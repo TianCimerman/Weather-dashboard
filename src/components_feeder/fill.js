@@ -8,7 +8,11 @@ export default function FeederDashboard() {
   const [loading, setLoading] = useState(false);
   const [animatedPercent, setAnimatedPercent] = useState(0);
 
-  const { distanceCm, percent: distancePercent } = getFillMetrics(status, FEEDER_FILL_MAX_CM);
+  const maxDistanceCm = Number(status?.maxDistanceCm);
+  const metricMaxDistance = Number.isFinite(maxDistanceCm) && maxDistanceCm > 0
+    ? maxDistanceCm
+    : FEEDER_FILL_MAX_CM;
+  const { distanceCm, percent: distancePercent } = getFillMetrics(status, metricMaxDistance);
 
   useEffect(() => {
     if (distancePercent == null) return;

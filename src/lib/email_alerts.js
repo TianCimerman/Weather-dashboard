@@ -52,18 +52,12 @@ function getTransporter() {
     console.warn("[feeder-alert][email] SMTP config invalid or incomplete; transporter not created");
     return null;
   }
-
   cachedTransporter = nodemailer.createTransport(smtpConfig);
-  console.log(
-    `[feeder-alert][email] Transporter initialized host=${smtpConfig.host} port=${smtpConfig.port} secure=${smtpConfig.secure}`
-  );
   return cachedTransporter;
 }
 
 export async function sendFeederLowFillEmail({ thresholdPercent, currentPercent, distanceCm, measuredAt }) {
-  console.log(
-    `[feeder-alert][email] Attempting send currentPercent=${currentPercent} threshold=${thresholdPercent} distanceCm=${distanceCm ?? "null"}`
-  );
+
 
   const transporter = getTransporter();
   const from = process.env.EMAIL_FROM;
@@ -97,9 +91,7 @@ export async function sendFeederLowFillEmail({ thresholdPercent, currentPercent,
       subject,
       text,
     });
-    console.log(
-      `[feeder-alert][email] Sent messageId=${info?.messageId ?? "unknown"} accepted=${Array.isArray(info?.accepted) ? info.accepted.length : 0} rejected=${Array.isArray(info?.rejected) ? info.rejected.length : 0}`
-    );
+    console.log(`[feeder-alert][email] Email sent: ${info.messageId}`);
   } catch (err) {
     console.error("[feeder-alert][email] sendMail failed:", err);
     return { ok: false, skipped: false, reason: "send_failed", error: String(err?.message ?? err) };

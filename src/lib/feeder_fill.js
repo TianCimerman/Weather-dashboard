@@ -16,7 +16,14 @@ export function calculateFillPercent(distanceCm, maxDistanceCm = FEEDER_FILL_MAX
 
 export function getFillMetrics(payload, maxDistanceCm = FEEDER_FILL_MAX_CM) {
   const distanceCm = normalizeDistanceCm(payload);
-  const percent = calculateFillPercent(distanceCm, maxDistanceCm);
+  const rawPercent = payload?.percent;
+  const parsedPercent = rawPercent == null ? null : Number(rawPercent);
+  const computedFromDistance = calculateFillPercent(distanceCm, maxDistanceCm);
+  const percent = computedFromDistance != null
+    ? computedFromDistance
+    : Number.isNaN(parsedPercent)
+      ? null
+      : Math.max(0, Math.min(100, Math.round(parsedPercent)));
 
   return {
     distanceCm,
