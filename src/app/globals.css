@@ -33,10 +33,11 @@ body {
   overflow: hidden; /* 🔒 DISABLE SCROLL */
 }
 .feeder-bg {
-  position: fixed;
-  inset: 0;
+  position: relative;
+  min-height: 100dvh;
+  width: 100%;
   background: linear-gradient(180deg, #0B121E, #070A10);
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 /* TEXTURE */
@@ -68,15 +69,17 @@ body {
   }
 
   .feeder-page {
+    min-height: 100dvh;
     overflow-y: auto;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
+    padding-bottom: 6.5rem;
   }
 
   .feeder-page .feeder-main {
     height: auto;
     overflow: visible;
-    padding-bottom: 6rem;
+    padding-bottom: 2rem;
   }
 }
 #custom-gauge {

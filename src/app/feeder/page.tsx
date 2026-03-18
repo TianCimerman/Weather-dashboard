@@ -10,7 +10,7 @@ import Fill from "@/components_feeder/fill";
 
 export default function FeederDashboard() {
   return (
-    <div className="feeder-bg feeder-page fixed inset-0 overflow-hidden flex flex-row h-full w-full">
+    <div className="feeder-bg feeder-page min-h-screen w-full overflow-x-hidden overflow-y-auto flex flex-row sl:flex-col">
       <div className="flex-1 flex flex-col">
         <h1 className="relative z-10 text-white text-4xl font-bold text-center p-5 sl:w-4/5">Feeder Dashboard</h1>
         <div className="relative z-10 w-full items-center sl:w-5/5 ">

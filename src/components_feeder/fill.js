@@ -77,7 +77,7 @@ export default function FeederDashboard() {
         gap-4
       "
     >
-      <div className="relative w-16 h-28 border-2 border-orange-400 rounded-2xl overflow-hidden bg-[#0B121E] flex-shrink-0">
+      <div className="relative w-16 h-28 border-2 border-orange-400 rounded-2xl overflow-hidden bg-[#0B121E] flex-shrink-0 s">
         <div
           className="absolute bottom-0 left-0 w-full bg-orange-500 transition-all duration-1000 ease-out"
           style={{ height: `${animatedPercent}%` }}
@@ -85,8 +85,8 @@ export default function FeederDashboard() {
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-transparent to-white/10 pointer-events-none" />
       </div>
 
-      <div className="flex flex-row items-start justify-center gap-4 flex-1">
-        <div className="text-white text-xl font-bold hss:pt-10 pt-12">
+      <div className="flex flex-row items-start justify-center gap-4 flex-1 ">
+        <div className="text-white text-xl font-bold hss:pt-10 sl:pt-6 pt-12 sl:pl-20">
         <p className="text-white text-left text-lg font-semibold">
           Fill: {distancePercent != null ? `${distancePercent}%` : loading ? "Loading..." : "--"}
         </p>
@@ -94,7 +94,7 @@ export default function FeederDashboard() {
           Distance: {distanceCm != null ? `${distanceCm} cm` : "--"}
         </p>
         </div>
-        <img src="/images/vecteezy_cute-dog-head-color-design_50090814-removebg-preview.png" alt="Fill legend" className="hss:w-32 w-40 opacity-80 hss:ml-0 ml-10 justify-center" />
+        <img src="/images/vecteezy_cute-dog-head-color-design_50090814-removebg-preview.png" alt="Fill legend" className="hss:w-32 w-40 opacity-80 hss:ml-0 ml-10 justify-center sl:ml-0  sl:w-[8rem] sl:pt-0" />
       </div>
 
 

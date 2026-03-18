@@ -10,7 +10,7 @@ module.exports = {
     extend: {
             screens: {
               'hss': { 'raw': '(min-width: 1280px) and (max-width: 1295px)' },
-              sl: { raw: '(max-width: 480px)' }
+              'sl': { 'raw': '(max-width: 480px)' }
 
       },
     },
